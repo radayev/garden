@@ -25,10 +25,11 @@ def gitPull(request):
 			repo = git.Repo(settings.BASE_DIR)
 			origin = repo.remotes.origin
 			origin.pull()
-			# os.system('./manage.py migrate')
-			os.system('touch /var/www/ctavares94_pythonanywhere_com_wsgi.py')
+			os.system(f'{settings.BASE_DIR}/manage.py migrate')
+			os.system(f'touch /var/www/{settings.PA_WSGI_NAME}.py')
 			return HttpResponse('Updated successfully')
 		else:
 			return HttpResponse('Error')
+	return HttpResponse(f'settings.BASE_DIR')
 	raise Http404()
 	return HttpResponseRedirect(reverse_lazy('404'))

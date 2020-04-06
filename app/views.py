@@ -9,6 +9,9 @@ import json
 def indexView(request):
 	return HttpResponse('Home Page')
 
+def userView(request):
+	return HttpResponse('User Page')
+
 @csrf_exempt
 def gitPull(request):
 	if request.method == 'POST':

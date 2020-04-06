@@ -30,6 +30,6 @@ def gitPull(request):
 			return HttpResponse('Updated successfully')
 		else:
 			return HttpResponse('Error')
-	return HttpResponse(f'settings.BASE_DIR')
+	return HttpResponse(f'{settings.BASE_DIR}')
 	raise Http404()
 	return HttpResponseRedirect(reverse_lazy('404'))

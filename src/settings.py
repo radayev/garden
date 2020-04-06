@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+PA_WSGI_NAME = 'ctavares94_pythonanywhere_com_wsgi'
 
 # Application definition
 

@@ -15,6 +15,9 @@ def indexView(request):
 def userView(request):
 	return HttpResponse('User Page')
 
+def userView(request):
+	return HttpResponse('Test Page')
+
 @csrf_exempt
 def gitPull(request):
 	if request.method == 'POST':

@@ -25,7 +25,7 @@ SECRET_KEY = '#(v_ro_#qnl7f4mc_y2-+3ef^1n!=e8@ef696j54=vftbxgr0e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'src.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,4 +117,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static_root')
+]
+
+VENV_PATH = os.path.dirname(BASE_DIR)
+
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_RT = os.path.join(BASE_DIR, 'static_root')
+
+SCRIPT_URL = '/script/'
+SCRIPT_ROOT = os.path.join(BASE_DIR, 'script')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL=reverse_lazy('home')
+LOGOUT_REDIRECT_URL=reverse_lazy('home')
+

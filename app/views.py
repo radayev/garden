@@ -22,7 +22,7 @@ def gitPull(request):
 			repo = git.Repo(settings.BASE_DIR)
 			origin = repo.remotes.origin
 			origin.pull()
-			os.system('./manage.py migrate')
+			# os.system('./manage.py migrate')
 			os.system('touch /var/www/ctavares94_pythonanywhere_com_wsgi.py')
 			return HttpResponse('Updated successfully')
 		else:

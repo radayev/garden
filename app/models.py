@@ -14,7 +14,7 @@ class controller(models.Model):
 	rel_3 = models.BooleanField(default=False)
 	rel_4 = models.BooleanField(default=False)
 
-	datetime = models.DateTimeField(auto_now=True, auto_now_add=True)
+	datetime = models.DateTimeField(auto_now=True)
 
 
 class raspi(models.Model):

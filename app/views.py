@@ -5,6 +5,10 @@ from django.urls import reverse_lazy
 import git
 import json
 # Create your views here.
+
+def indexView(request):
+	return HttpResponse('Home Page')
+
 @csrf_exempt
 def gitPull(request):
 	if request.method == 'POST':
